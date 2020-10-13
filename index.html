@@ -8,6 +8,11 @@
     <title>coffeerun</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
         integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw=" crossorigin="anonymous" />
+        <style>
+            form :focus:required:invalid {
+              border-color: #a94442;
+            }
+          </style>
 </head>
 
 <body class="container">
@@ -19,15 +24,17 @@
             <div class="panel-body">
                 <form data-coffee-order="form">
                     <div class="form-group">
-                        <label for="coffeeOrder">Coffee Order</label>
-                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
-                    </div>
-
-                    <div class="form-group">
+                        <label for="coffeeOrder">Order</label>
+                        <input class="form-control" name="coffee" id="coffeeOrder"
+                          autofocus required pattern="[a-zA-Z\s]+"/>
+                      </div>
+          
+                      <div class="form-group">
                         <label for="emailInput">Email</label>
-                        <input class="form-control" type="email" name="emailAddress" id="emailInput" value=""
-                            placeholder="dr@who.com">
-                    </div>
+                        <input class="form-control" type="email" name="emailAddress"
+                        id="emailInput" value="" placeholder="dr@who.com"
+                          required />
+                      </div>
 
                     <div class="radio">
                         <label>
@@ -73,12 +80,12 @@
             </div>
         </div>
     </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"
-        integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+    charset="utf-8"></script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
     <script src="scripts/checklist.js" charset="utf-8"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
     <script src="scripts/main.js" charset="utf-8"></script>
